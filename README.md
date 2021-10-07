@@ -15,5 +15,5 @@ eliminating background noise and transcribing speech into text in real time.
 
 # Achieved Work
 
-![alt text](https://github.com/Ahmed-Messlmani/PFE_TALAN/blob/main//web video conference//HomePage.png?raw=true)
+![alt text](https://github.com/Ahmed-Messlmani/PFE_TALAN/blob/main/web%20video%20conference/HomePage.png?raw=true)
 
