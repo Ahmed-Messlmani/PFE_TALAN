@@ -13,7 +13,12 @@ in noisy areas, as their voice is not clear to other participants because of the
 The objective of the project is to implement a video conferencing application capable of
 eliminating background noise and transcribing speech into text in real time.
 
-# Achieved Work
+# Home Page
+As you can see this is the HomePage for my Application, the user will have two
+options create a room or join a Public room. To create a room the user should enter a
+name for the room and if the name is not used in another room a new room will be
+created,in addition to that user have the choice to create a public or private room, for the
+private room a password is required.
 
 ![alt text](https://github.com/Ahmed-Messlmani/PFE_TALAN/blob/main/web%20video%20conference/HomePage.png?raw=true)
 
