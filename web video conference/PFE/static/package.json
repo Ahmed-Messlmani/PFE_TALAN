@@ -1,0 +1,51 @@
+{
+  "name": "pfe_project_application",
+  "version": "0.2.3",
+  "description": "video conference application with speech to text and noise reduction ",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "watch": "webpack --mode development --config webpack.config.js --progress --devtool eval --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed-Messlmani/PFE_TALAN"
+  },
+  "keywords": [
+    "video conference",
+    "noise reduction",
+    "speech recognition",
+    "webrtc"
+  ],
+  "author": "Ahmed Messlmani",
+  "license": "AGPL-3.0-or-later",
+  "homepage": "https://ahmed-messlmani.github.io/PFE_TEST",
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "cypress": "^6.6.0",
+    "eslint": "^7.21.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-react": "^7.22.0",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "babel-loader": "^8.2.2",
+    "fscreen": "^1.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "webrtc-adapter": "^7.7.1"
+  }
+}

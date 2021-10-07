@@ -1,0 +1,920 @@
+/* --- General element styles --- */
+
+/* Fallback scrollbar styling for webkit */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px lightgray;
+    border-radius: 10px;
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+html {
+    background-image:url("camus/static/images.jpg");
+    /*background:radial-gradient(ellipse at right, #999999, transparent), radial-gradient(ellipse at bottom, #696969, transparent),radial-gradient(ellipse at left, #696969, transparent),radial-gradient(ellipse at top, #696969, transparent); min-height: 100%;  /* Allow background to fill entire screen */
+    scrollbar-color: #888 #f1f1f1;
+    scrollbar-width: thin;
+     /* The image used */
+        background-image: url("https://www.teahub.io/photos/full/317-3175862_work-desk-background.jpg");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+}
+
+body {
+    background: none;
+}
+
+button:hover,
+button:focus {
+    box-shadow: 0 0 0 0.2rem rgb(92, 109, 92);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+select {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0px 8px;
+}
+
+select:focus {
+    border-color: darkgray;
+    outline: none;
+}
+
+input {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+input:focus {
+    border-color: darkgray;
+    outline: none;
+}
+
+summary:focus {
+    outline: none;
+    font-weight: bold;
+}
+
+/* --- Bootstrap overrides --- */
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: darkgray;
+}
+
+
+/* --- Camus specific --- */
+
+.content {
+    margin-top: 20px;
+}
+
+.boldlink {
+    color: darkslategray;
+}
+
+.boldlink:hover,
+.boldlink:focus {
+    color: darkslategray;
+    text-shadow: 0.1px 0.1px 0px gray,
+                 -0.1px -0.1px 0px gray,
+                 0.1px -0.1px 0px gray,
+                 -0.1px 0.1px 0px gray;
+    text-decoration: none;
+}
+
+.about a {
+    color: #004B6B;
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+}
+
+.about a:hover {
+    color: #6B6000;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+}
+
+.about i {
+    /* Consistent sizing for material icons */
+    font-size: 1em;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-2em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0em);
+        opacity: 1;
+    }
+}
+
+.slide-down {
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dialog {
+    background-color: #ddd;
+    color: #333;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.dialog .title {
+    font-size: 1.25rem;
+}
+
+.dialog table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.dialog table td,
+.dialog table th {
+    padding: 0.75rem;
+    word-wrap: break-word;
+    vertical-align: top;
+}
+
+.dialog table thead {
+    border-bottom: 1px solid #555;
+}
+
+.dialog .footer-link {
+    text-align: right;
+    color: #555;
+    font-size: 1rem;
+}
+
+.dialog .footer-link hr {
+    border-color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.dialog .footer-link h6 {
+    margin-bottom: 0;
+}
+
+.dialog .footer-link a {
+    color: #555;
+}
+
+.dialog .footer-link a:hover {
+    color: #333;
+}
+
+#public-rooms-dialog {
+    width: 100%;
+    padding-bottom: 10px;
+    margin: 50px 0px;
+}
+
+#create-room-dialog {
+    width: clamp(10%, 500px, 100%);
+    padding-bottom: 10px;
+    margin: 50px 0px;
+    
+}
+
+.dialog .input-line {
+    display: flex;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.dialog .input-line label {
+    margin-bottom: 0;
+}
+
+.dialog .input-line input[type=text],
+.dialog .input-line input[type=password] {
+    width: 100%;
+}
+
+.dialog .input-line input[type=submit] {
+    display: inline-block;
+    margin-right: 0;
+}
+
+.dialog .input-line button {
+    background: none;
+    border: none;
+    color: #555;
+    height: 20px;
+}
+
+.dialog .input-line button:hover,
+.dialog .input-line button:focus {
+    color: #333;
+    outline: none;
+    box-shadow: none;
+}
+
+.dialog input,
+.dialog select {
+    background: none;
+    margin: 0 8px;
+    border: none;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+}
+
+.dialog input:focus,
+.dialog select:focus {
+    border-color: #555;
+}
+
+.dialog input[type=submit] {
+    color: #ddd;
+    background-color: #4311da;
+    border: none;
+    border-radius: 4px;
+}
+
+.dialog .btn-cancel {
+    color: #ddd;
+    background-color: #888;
+    border: none;
+    border-radius: 4px;
+}
+
+.dialog details {
+    margin-top: 20px;
+}
+
+.dialog details div {
+    padding-left: 20px;
+}
+
+.invite-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    width: 300px;
+    padding: 10px;
+    background-color: #aaa;
+    border-color: darkgray;
+}
+
+.invite-box input {
+    padding: 0;
+    border: none;
+    color: #333;
+}
+
+.invite-box input[type=button]:hover {
+    text-decoration: underline;
+}
+
+.exit-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    min-width: 300px;
+    text-align: center;
+}
+
+.headline {
+    color: rgb(32, 32, 32);
+}
+
+.sub-headline {
+    color: rgb(32, 32, 32);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.create-room-area {
+    min-height: 50vh;
+}
+
+.info-area {
+    min-height: 100vh;
+    line-height: 1.2;
+}
+
+.info-area .main-headline {
+    font-size: 2rem;
+    color: #ddd;
+}
+
+.info-area .sub-headline {
+    font-size: 1.5rem;
+}
+
+.info-box {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.info-box .headline {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+.info-box .material-icons {
+    font-size: 3em;
+}
+
+.info-box p {
+    color: #bbb;
+    font-size: 1.25rem;
+}
+
+.info-box a {
+    color: inherit;
+}
+
+.info-box a:hover {
+    color: #ddd;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #444;
+}
+
+footer p {
+    display: inline-block;
+    font-size: 14px;
+    color: #bbb;
+    vertical-align: middle;
+}
+
+footer a {
+    color: #bbb;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+footer .footer-left {
+    float: left;
+}
+
+footer .footer-right {
+    float: right;
+}
+
+/* --- React --- */
+
+.react-root {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(ellipse at right, #999999, transparent), radial-gradient(ellipse at bottom, #696969, transparent),radial-gradient(ellipse at left, #696969, transparent),radial-gradient(ellipse at top, #696969, transparent); 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.enter-room-modal {
+    /* Center modal on its own layer above everything else */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    width: clamp(50%, 600px, 100%);
+    padding: 20px;
+
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.enter-room-modal form {
+    flex: 1 200px;
+
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.enter-room-modal form input,
+.enter-room-modal form select {
+    display: block;
+    width: 100%;
+}
+
+.enter-room-modal .video-container {
+    flex: 1 200px;
+    margin: 10px;
+}
+
+.enter-room-modal .video-container video {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    background-color: #000;
+    border-radius: 0.5em;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9998;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(104, 102, 102);
+    opacity: 0.5;
+}
+
+.video-stage {
+    flex: 1 1 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    width: 100%;
+    margin: 0;
+
+    overflow-y: auto;
+}
+.videoText {
+    padding: 3px 4px;
+    position: relative;
+    
+    border-radius: 0.5em;
+    height: 100%;
+  }
+  
+  .videoText .video {
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    z-index: 0;
+    height: 100%;
+    display: flex;
+
+    background-color: #000;
+    border-radius: 0.5em;
+  }
+  .videoText .text-light {
+    position: absolute;
+    bottom:0px;
+    display: block;
+    width: 100%;
+    z-index: 1;
+    color: #FFF;
+    
+    margin: 50px 0;
+    
+  }
+  .videoText .text-secondary {
+    position: absolute;
+    bottom:0px;
+    display: block;
+    width: 100%;
+    z-index: 1;
+    color: #FFF;
+    
+    margin: 1px 0;
+  }
+
+.video-feed {
+    padding: 3px 4px;
+    position: relative;
+    
+    border-radius: 0.5em;
+}
+/*
+.video-feed video {
+    
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    background-color: #000;
+    border-radius: 0.5em;
+}
+*/
+.video-feed:hover video,
+.video-feed:focus video {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    transition-delay: 0.2s;
+    transition-timing-function: ease;
+    box-shadow: 0 0 0 0.2rem rgb(91, 168, 158);
+    cursor: grab;
+}
+
+.video-feed .video-tag {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    z-index: 9;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    font-size: 1.5em;
+}
+
+
+.video-feed:hover .video-tag,
+.video-feed:focus .video-tag {
+    display: inline;
+    color: #fff;
+    text-shadow: 1px 1px 4px #000,
+                 -1px -1px 4px #000,
+                 1px -1px 4px #000,
+                 -1px 1px 4px #000;
+    text-overflow: ellipsis;
+}
+
+.video-control-bar {
+    display: none;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    left: 3px;
+    padding: 10px;
+    padding-top: 16px;
+    background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    border-radius: 0.5em;
+    text-align: right;
+}
+
+.video-feed:hover .video-control-bar,
+.video-feed:focus .video-control-bar,
+.video-feed:focus-within .video-control-bar {
+    display: inline;
+}
+
+.video-control-bar button {
+    background: none;
+    color: #ccc;
+    box-shadow: none;
+    border: none;
+}
+
+.video-control-bar button:hover,
+.video-control-bar button:focus {
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.toggle-visibility,
+.toggle-audio,
+.volume-slider {
+    float: left;
+}
+
+/* See https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
+input[type=range] {
+    -webkit-appearance: none;
+    max-width: 100px;
+    background: transparent;
+    border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    margin-top: -4px;
+}
+
+input[type=range]:hover::-webkit-slider-thumb,
+input[type=range]:focus::-webkit-slider-thumb {
+    background: #fff;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #ccc;
+    border: none;
+    outline: none;
+    margin-bottom: -24px;  /* magic number controlling vertical alignment */
+}
+
+input[type=range]:hover::-webkit-slider-runnable-track,
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fff;
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+}
+
+input[type=range]:hover::-moz-range-thumb,
+input[type=range]:focus::-moz-range-thumb {
+    background: #fff;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #ccc;
+    border: none;
+    outline: none;
+}
+
+input[type=range]:hover::-moz-range-track,
+input[type=range]:focus::-moz-range-track {
+    background: #fff;
+}
+
+.video-settings {
+    position: absolute;
+    bottom: calc(100%);
+    right: 10px;
+    background: #333;
+    opacity: 0.9;
+    color: #ccc;
+}
+
+.video-settings p {
+    text-align: center;
+    padding: 4px;
+    margin: 0px;
+    border-bottom: 1px solid #555;
+}
+
+.video-settings button {
+    width: 100%;
+    padding: 4px;
+}
+
+.video-settings button:hover {
+    color: #fff;
+    background: #555;
+}
+
+.video-settings span.selected {
+    color: #fff;
+    font-weight: bold;
+}
+
+.media-control-bar {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.media-control-bar button ,
+.media-control-bar select,
+.chat-message-bar button,
+.ice-servers button {
+    border: none;
+    border-radius: 4px;
+    background-color: #aaa;
+    color: #333;
+    padding: 6px 12px;
+    margin: 0 4px;
+}
+
+.media-control-bar button:hover,
+.media-control-bar button:focus,
+.chat-message-bar button:hover,
+.chat-message-bar button:focus,
+.ice-servers button:hover,
+.ice-servers button:focus {
+    background-color: #999;
+    color: #111;
+    outline: none;
+}
+
+.media-control-bar button:active,
+.chat-message-bar button:active,
+.ice-servers button:active {
+    background-color: #888;
+    color: #000;
+}
+
+.sidebar {
+    flex: 0 0 clamp(20%, 400px, 100%);
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px dotted lightgray;
+    border-radius: 0.5em;
+
+    background-color: #aaa;
+}
+
+.sidebar.collapsed {
+    flex: 0 0 auto;
+}
+
+.sidebar .icon-button {
+    border: none;
+    border-radius: 4px;
+    background-color: #aaa;
+    color: #333;
+    padding: 6px 12px;
+    margin: 2px;
+}
+
+.sidebar .icon-button:hover,
+.sidebar .icon-button:focus {
+    background-color: #999;
+    color: #111;
+    outline: none;
+}
+
+.sidebar .icon-button:active {
+    background-color: #888;
+    color: #000;
+}
+
+.chat-message-bar {
+    flex: 1;
+
+    /* Allow .chat-message-log to take up as much space as necessary, with
+     * the message form positioned at the bottom of the container */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message-bar form {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+.chat-message-bar form input {
+    flex: 1;
+}
+
+.chat-message-log {
+    padding: 20px;
+    margin: 0;
+
+    /* flex-basis must be set for overflow to work */
+    flex: 1;
+    flex-basis: 0;
+    overflow-y: auto;
+}
+
+.chat-message-time {
+    display: inline-block;
+    font-size: small;
+    font-style: italic;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    
+}
+
+.chat-message-from {
+    display: inline-block;
+    font-variant-caps: all-small-caps;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.chat-message-text {
+    margin-top: 0px;
+}
+
+.connection-info-bar {
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.connection-info-node {
+    padding: 10px 20px;
+}
+
+.connection-info-node li {
+    font-variant-caps: all-small-caps;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.connection-info-node span {
+    font-variant-caps: normal;
+    font-weight: normal;
+    font-size: small;
+    font-style: italic;
+}
+
+.ice-servers-bar {
+    overflow-y: auto;
+}
+
+.ice-servers {
+    padding: 20px 20px;
+}
+
+.ice-server {
+    padding: 10px 0px;
+}
+
+.ice-server form label,
+.ice-server form input {
+    display: block;
+    width: 100%;
+}
+
+.chat-message-bar input,
+.ice-server input {
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: inherit;
+}
+
+.chat-message-bar input:focus,
+.ice-server input:focus {
+    border-color: #333;
+    outline: none;
+}
+
+.ice-server input:invalid {
+    border-color: #a00;
+}

@@ -1,0 +1,6 @@
+cd /d path to web video conference folder
+hypercorn "PFE:create_app()" --log-file - -b 127.0.0.1:5000
+
+
+
+

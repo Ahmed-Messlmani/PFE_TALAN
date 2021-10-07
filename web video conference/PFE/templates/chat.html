@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% import "bootstrap/form.html" as wtf %}
+
+{% block header_content %}
+  <h1 class="headline">Graduation Project</h1>
+  <img src="static/Talan.png" align="right">
+  <p class="sub-headline">
+    Video Chat Application<br/>
+  </p>
+{% endblock %}
+
+{% block app_content %}
+<main class="create-room-area">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dialog" id="create-room-dialog">
+        <h2 class="title">New Meeting </h2>
+        <form method="post" id="create-room-form">
+          {{ create_room_form.csrf_token }}
+          <div class="input-line" autocomplete="off">
+            {{ create_room_form.room_name.label(hidden=True) }}
+            {{ create_room_form.room_name(**{'aria-label': 'Room name'}) }}
+            <input class="btn btn-secondary" id="submit" name="submit"
+              type="submit" value="Create"
+            >
+          </div>
+          
+          <h2 class='title'>Meeting Properties</h2>
+          <div class="input-line">
+            {{ create_room_form.password.label() }}:
+            {{ create_room_form.password(**{'aria-label': 'Room password'}) }}
+            <button type="button" id="password-visibility-button" onclick="togglePasswordVisibility()"
+                aria-label="Toggle password visibility" aria-pressed="false">
+              <i id="visibility-icon" class="material-icons">
+                visibility_off
+              </i>
+            </button>
+          </div>
+          <div class="input-line">
+            {{ create_room_form.public.label() }}:
+            {{ create_room_form.public() }}
+          </div>
+          <div class="input-line">
+            {{ create_room_form.guest_limit.label }}:
+            {{ create_room_form.guest_limit() }}
+          </div>
+          
+        </form>
+        <div class="footer-link">
+          <span>
+            &#8627;<a class="footer-link" href="/public">Join public room</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  function togglePasswordVisibility() {
+    const pwInput = document.getElementById('password');
+    const visibilityButton = document.getElementById('password-visibility-button');
+    const visibilityIcon = document.getElementById('visibility-icon');
+    if (pwInput.type === 'password') {
+      pwInput.type = 'text';
+      visibilityButton.setAttribute('aria-pressed', true);
+      visibilityIcon.innerHTML = 'visibility';
+    } else {
+      pwInput.type = 'password';
+      visibilityButton.setAttribute('aria-pressed', false);
+      visibilityIcon.innerHTML = 'visibility_off';
+    }
+  }
+</script>
+{% endblock %}

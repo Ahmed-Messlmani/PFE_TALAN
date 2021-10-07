@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% import "bootstrap/form.html" as wtf %}
+
+{% block app_content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="dialog slide-down" id="create-room-dialog">
+      <h5>Join {{ room.name}}</h5>
+      <form method="post" role="form" action="{{ room.slug }}">
+        {{ form.csrf_token }}
+        <div class="input-line">
+          {{ form.password.label() }}:
+          {{ form.password() }}
+          <button type="button" onclick="togglePasswordVisibility()">
+            <i id="visibility-icon" class="material-icons">
+              visibility_off
+            </i>
+          </button>
+        </div>
+        <input class="btn btn-secondary" id="submit" name="submit"
+          type="submit" value="Create"
+        >
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  function togglePasswordVisibility() {
+    const pwInput = document.getElementById('password');
+    const visibilityIcon = document.getElementById('visibility-icon');
+    if (pwInput.type === 'password') {
+      pwInput.type = 'text';
+      visibilityIcon.innerHTML = 'visibility';
+    } else {
+      pwInput.type = 'password';
+      visibilityIcon.innerHTML = 'visibility_off';
+    }
+  }
+</script>
+
+{% endblock %}
