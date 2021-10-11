@@ -24,4 +24,4 @@ private room a password is required.
 
 # Main Page
 
-![alt text](https://github.com/Ahmed-Messlmani/PFE_TALAN/blob/main/web%20video%20conference/communication%20page.png?raw=true)
+![alt text](https://github.com/Ahmed-Messlmani/PFE_TALAN/blob/main/web%20video%20conference/Cummunication%20Page.png?raw=true)
